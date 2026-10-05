@@ -1,0 +1,12 @@
+# Image for mybinder.org: JupyterLab with the released extension on the
+# Python named in runtime.txt (the package needs 3.12 or later). The
+# extension is pinned to a release, since mybinder caches the image it
+# builds for a commit and would otherwise keep whatever PyPI had at the
+# first launch; bump the pin after each release of jupyterlab-workshop.
+# tornado is held below 6.5.9, whose static file handler reads an
+# attribute the Jupyter server's handler never sets and so fails every
+# request for JupyterLab's own assets (tornadoweb/tornado#3724); drop
+# the bound once a fixed tornado ships.
+jupyterlab>=4.6,<5
+jupyterlab-workshop==0.22.1
+tornado<6.5.9
