@@ -6,7 +6,11 @@
 # tornado is held below 6.5.9, whose static file handler reads an
 # attribute the Jupyter server's handler never sets and so fails every
 # request for JupyterLab's own assets (tornadoweb/tornado#3724); drop
-# the bound once a fixed tornado ships.
+# the bound once a fixed tornado ships. jupyter-server-proxy serves a
+# web app a workshop starts at <base>/proxy/<port>/, since a visitor's
+# browser cannot reach the session's loopback address; installing it
+# enables it, and in a Binder session only its one visitor can use it.
 jupyterlab>=4.6,<5
-jupyterlab-workshop==0.23.0
+jupyterlab-workshop==0.24.0
+jupyter-server-proxy
 tornado<6.5.9

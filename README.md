@@ -43,10 +43,12 @@ where a workshop can be added from its URL.
 
 ## What the image does
 
-- `binder/requirements.txt` installs JupyterLab and a pinned release of
-  jupyterlab-workshop. mybinder caches the image it builds for a commit,
-  so the pin is bumped after each release to bring the launcher up to
-  date.
+- `binder/requirements.txt` installs JupyterLab, a pinned release of
+  jupyterlab-workshop, and jupyter-server-proxy, which lets a workshop
+  show a web app it starts in the session, through JupyterLab's own
+  address at `proxy/<port>/`. mybinder caches the image it builds for
+  a commit, so the pin is bumped after each release to bring the
+  launcher up to date.
 
 - `binder/runtime.txt` selects a Python the package supports.
 
