@@ -11,6 +11,6 @@
 # browser cannot reach the session's loopback address; installing it
 # enables it, and in a Binder session only its one visitor can use it.
 jupyterlab>=4.6,<5
-jupyterlab-workshop==0.29.0
+jupyterlab-workshop==0.29.1
 jupyter-server-proxy
 tornado<6.5.9
